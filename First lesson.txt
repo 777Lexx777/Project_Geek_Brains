@@ -1,0 +1,251 @@
+
+Lesson link : https://geekbrains.ru/lessons/75112/homework
+
+
+
+Task 1
+======================================================
+package ru.geekbrains.catch_first;
+
+public class Main {
+
+    public static void main(String[] args) {
+	// write your code here
+    }
+}
+Task 2
+======================================================
+public class Main {
+
+    public static void main(String[] args) {
+	    byte a = 1;
+        int b = 127;
+        long c = 10000000;
+        float d = 1.5f;
+        double e = 1.5d;
+        char f = 10;
+        char g = 'g';
+        String string = "String";
+    }
+}
+Task 3
+======================================================
+package geek;
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        int result = first(5, 6, 7, 8);
+        System.out.println(result);
+    }
+
+        static int first(int a, int b, int c, int d){
+             return  a * (b + (c / d));
+        }
+}
+
+Task 4
+=========================================================
+package geek;
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        String result = first(20, 6);
+        System.out.println(result);
+    }
+        static String first(int a, int b){
+            if ((a + b) >= 10 && (a + b) <= 20)
+                return "true";
+            else
+                return "false";
+        }
+}
+========================================================
+Почему вот так работает (см.выше)?
+========================================================
+package geek;
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        String result = first(20, 6);
+        System.out.println(result);
+
+
+        static String first ( int a, int b){
+            if ((a + b) >= 10 && (a + b) <= 20)
+                return "true";
+            else
+                return "false";
+        }
+    }
+}
+Information:java: Errors occurred while compiling module 'untitled104'
+Information:javac 14.0.1 was used to compile java sources
+Information:14.07.2020 9:32 - Build completed with 2 errors and 0 warnings in 2 s 193 ms
+C:\java\Project\src\geek\Main.java
+Error:(11, 9) java: illegal start of expression
+Error:(18, 1) java: class, interface, or enum expected
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+А вот так (см.выше), ошибку выдает? Хотя точно как на вебинаре было показаною. 
+В 3 задании(которе выше) так же происходит.
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+Task 5
+========
+package geek;
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        String result = first(-1);
+           System.out.println(result);
+    }
+        static String first ( int a){
+            if (a >= 0)
+                return "положительное";
+            else
+                return "отрицательное";
+        }
+}
+Task 6
+=========================================================
+package geek;
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        String result = first(1);
+           System.out.println(result);
+    }
+        static String first ( int a){
+            if (a < 0)
+                return "true";
+            else
+                return " ";
+        }
+}
+========================================================
+Тот же вопрос. Почему вот так работает (см.выше)?
+========================================================
+package geek;
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        String result = first(1);
+           System.out.println(result);
+    }
+        static String first ( int a){
+            if (a < 0)
+                return "true";
+//            else
+//                return " ";
+        }
+}
+Information:java: Errors occurred while compiling module 'untitled104'
+Information:javac 14.0.1 was used to compile java sources
+Information:14.07.2020 9:52 - Build completed with 1 error and 0 warnings in 2 s 958 ms
+C:\java\Project\src\geek\Main.java
+Error:(15, 9) java: missing return statement
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+А вот так (см.выше), ошибку выдает,"else" по умолчанию должно работать? 
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+Task 7
+=========================================================
+Var:1
+package geek;
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        //String result = first(name);
+        first("Den");
+        //System.out.println(result);
+    }
+        static String first ( String a){
+            String name = a;
+            System.out.println( "Привет, " + a + " ! ");
+            return name;
+        }
+}
+
+---------------------------------------------------------
+Var:2
+
+package geek;
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        //String result = first(name);
+        first("Den");
+        //System.out.println(result);
+    }
+        static String first ( String a){
+            String name = a;
+            System.out.println( "Привет, " + name + " ! ");
+            return name;
+        }
+}
+_________________________________________________________
+Var:3
+
+package geek;
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        //String result = first(name);
+        first("Den");
+        //System.out.println(result);
+    }
+        static String first ( String a){
+            //String name = a;
+            System.out.println( "Привет, " + a + " ! ");
+            return a;
+        }
+}
+==================================================================
+Все три сработали, но я не по одному не понял как?
+Не понимаю логики возврата "return". Если "return" должен вернуть
+просто "а" как возвращается целая строка??? 
+"C:\Program....geek.Main
+
+Привет, Den ! 
+
+Process finished with exit code 0
+==================================================================
+
+Task 8
+==================================================================
+package geek;
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        //String result = first(name);\
+        String year = year(2001);
+        System.out.println(year);
+    }
+        static String year (int a){
+            if ((a % 4 == 0) && (a % 100 != 0) || (a % 400 == 0))
+                return " Високосный";
+            else
+                return "Неа! НЕ високосный";
+        }
+}
+
+
