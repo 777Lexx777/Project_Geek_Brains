@@ -19,14 +19,10 @@ public class Lesson_4 {
 
         do {
             // TODO Проверка на ничью
-             //for (char y = 9; y >= field.length; y--) {
-             //   if (y != '-');{
-//                if ( field [0][0] != '-' && field [0][1] != '-' && field [0][2] != '-' &&
-//                field [1][0] != '-' && field [1][1] != '-' && field [1][2] != '-' &&
-//                field [2][0] != '-' && field [2][1] != '-' && field [2][2] != '-' ){
-                   // System.out.println("You have a draw.");
-                 //   break;
-            //    }
+             if (field(field)) {
+                System.out.println("You have a draw.");
+                break;
+            }
 
 
             // Ход игрока
@@ -52,10 +48,24 @@ public class Lesson_4 {
             }
         } while (true);
 
-        System.out.println("Sir, congratulations!");
-        System.out.println("You are winner Mr. " + winnerName);
+        if (winnerName != null) {
+            System.out.println("Sir, congratulations!");
+            System.out.println("You are winner Mr. " + winnerName);
+        }
     }
-
+          static boolean field( char[][] field){
+        int count =0;
+        //char[3][3] draw = new char[][];
+        for (int y = 0; y < 3; y++) {
+            for (int m = 0; m < 3 ; m++) {
+                if (field[y][y] =='-'){
+                    
+                }
+            }
+        }
+        count++;
+        return  count == 3;
+    }
 
     static void doAIMove(char[][] field, char sign) {
         Random random = new Random();
