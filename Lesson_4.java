@@ -58,7 +58,7 @@ public class Lesson_4 {
         //char[3][3] draw = new char[][];
         for (int y = 0; y < 3; y++) {
             for (int m = 0; m < 3 ; m++) {
-                if (field[y][y] =='-'){
+                if (field[y][m] =='-'){
                     
                 }
             }
