@@ -18,14 +18,7 @@ public class Lesson_4 {
         drawField(field);
 
         do {
-            // TODO Проверка на ничью
-             if (field(field)) {
-                System.out.println("You have a draw.");
-                break;
-            }
-
-
-            // Ход игрока
+           // Ход игрока
             doPlayerMove(field, playerSign);
             // Перерисовка поля, чтобы увидеть поставленные фишки
             drawField(field);
@@ -33,6 +26,10 @@ public class Lesson_4 {
             // Проверка на победу
             if (checkWin(field, playerSign)) {
                 winnerName = "Player";
+                break;
+            } else if (field(field)) {
+                // TODO Проверка на ничью
+                System.out.println("You have a draw.");
                 break;
             }
 
@@ -44,6 +41,10 @@ public class Lesson_4 {
             // Проверка на победу
             if (checkWin(field, computerSign)){
                 winnerName = "Computer";
+                break;
+            } else if (field(field)) {
+                // TODO Проверка на ничью
+                System.out.println("You have a draw.");
                 break;
             }
         } while (true);
